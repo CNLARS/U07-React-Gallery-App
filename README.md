@@ -1,3 +1,5 @@
+<!-- Add to the top of this readme any and all info to explain what your projects is and anything your user or fellow developers might need to know to use the project, like the format of your config file and where in the directory it should be stored. -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
