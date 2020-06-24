@@ -52,7 +52,7 @@ findFlickrData = (query) => {
       <BrowserRouter>
         <div className="container">
           <div className="sub-container">
-            <h1 className="main-name">Galactic Gallery</h1>
+            <h1 className="main-name">★ Galactic Gallery ★</h1>
             <SearchForm onSearch={this.findFlickrData} />
           </div>
           <Nav />

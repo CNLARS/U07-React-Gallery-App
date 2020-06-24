@@ -2,12 +2,19 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background-color: black;
+}
+
+h1 {
+  color: silver;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+  color: silver;
 }
 
 ul {
