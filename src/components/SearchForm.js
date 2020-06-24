@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class SearchForm extends Component {
+export default class SearchForm extends Component {
 
     state = {
         topic: ""
@@ -11,8 +11,9 @@ class SearchForm extends Component {
     }
 //Sends a search request and resets input
     searchIMG = e => {
+        e.preventDefault();
         this.props.onSearch(this.query.value);
-        e.current.target.reset();
+        e.currentTarget.reset();
     }
 
     render(){
@@ -23,7 +24,7 @@ class SearchForm extends Component {
                 onChange={this.searchReq}
                 name="search"
                 ref={ (input) => this.query = input } 
-                placeholder="Search Requesting..." 
+                placeholder="Search" 
             required/>
             <button type="submit" className="search-button">
             <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -35,5 +36,3 @@ class SearchForm extends Component {
         );
     }
 }
-
-export default SearchForm;

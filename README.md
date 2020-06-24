@@ -1,8 +1,10 @@
 <!-- Add to the top of this readme any and all info to explain what your projects is and anything your user or fellow developers might need to know to use the project, like the format of your config file and where in the directory it should be stored. -->
 
-EE Featuring:
+Exceeds Expectations Criteria Featuring:
 
 Loading message, updated Nav CSS, no search results, and 404Error Route Component.
+
+axios get request includes a safe search and results are set to 24 max.
 
 API Key not included, update App.js line 36 ${Config} to access with API Key.
 

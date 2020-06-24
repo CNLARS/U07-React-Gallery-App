@@ -57,16 +57,15 @@ findFlickrData = (query) => {
           </div>
           <Nav />
         </div>
-
-        <Switch>
-            <Route exact path="/" />
-            <Route exact path="/sun" render={ () => <Sun title="Keep your face to the sun and you will never see the shadows" data={this.findFlickrData("Sun+rise+set") }/>} /> 
-            <Route exact path="/moon" render={ () => <Moon title ="The Moon is Haunted..." data={this.findFlickrData("Moon+eclipse") }/>} /> 
-            <Route exact path="/stars" render={ () => <Stars title ="Why would a star, a star ever be afraid of the dark?" data={this.findFlickrData("starry+night") }/>} /> 
-            <Route component={Error404} />
-          </Switch>
         
         <div className="main-content">
+            <Switch>
+              <Route exact path="/" />
+              <Route path="/sun" render={ () => <Sun title="Keep your face to the sun and you will never see the shadows" data={this.findFlickrData("Sun+rise+set") }/>} /> 
+              <Route path="/moon" render={ () => <Moon title ="The Moon is Haunted..." data={this.findFlickrData("Moon+eclipse") }/>} /> 
+              <Route path="/stars" render={ () => <Stars title ="Why would a star, a star ever be afraid of the dark?" data={this.findFlickrData("starry+night") }/>} /> 
+              <Route component={Error404} />
+            </Switch>
 
          {
            (this.state.uploading)
