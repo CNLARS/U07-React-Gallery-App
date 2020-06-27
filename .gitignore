@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-/src/components/Config.js
+# /src/components/Config.js
 
 # testing
 /coverage
