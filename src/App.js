@@ -38,10 +38,6 @@ componentDidUpdate(prevProps) {
   console.log("componentDidUpdate");
 }
 
-// sunshine(){
-//   this.setState( { photographs: this.findFlickrData("Sun+rise+set") } );
-// }
-
 
 findFlickrData = (query) => {
   axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${Config}&tags=${query}&safe_search=&per_page=24&format=json&nojsoncallback=1`)
