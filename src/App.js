@@ -30,6 +30,7 @@ export default class App extends Component{
 
 componentDidMount(){
   this.findFlickrData("nebulas"); //Initial image display
+  // this.findFlickrData();
 }
 
 findFlickrData = (query) => {
@@ -40,12 +41,13 @@ findFlickrData = (query) => {
         uploading: false
       })
       //console.log(response.data.photos.photo[0]); //Testing123
-      //console.log(query); //Testing123
+      console.log("Fetching"); //Testing123
     })
     .catch(error => {
       console.log(error);
     })
 }
+
   render(){
 
     return (
@@ -61,15 +63,15 @@ findFlickrData = (query) => {
         <div className="main-content">
             <Switch>
               <Route exact path="/" />
-              <Route path="/sun" render={ () => <Sun title="Keep your face to the sun and you will never see the shadows" data={this.findFlickrData("Sun+rise+set") }/>} /> 
-              <Route path="/moon" render={ () => <Moon title ="The Moon is Haunted..." data={this.findFlickrData("Moon+eclipse") }/>} /> 
-              <Route path="/stars" render={ () => <Stars title ="Why would a star, a star ever be afraid of the dark?" data={this.findFlickrData("starry+night") }/>} /> 
+              <Route exact path="/sun" render={ () => <Sun data={this.findFlickrData("Sun+rise+set")  } />} /> 
+              <Route exact path="/moon" render={ () => <Moon data={this.findFlickrData("Moon+eclipse") } />} /> 
+              <Route exact path="/stars" render={ () => <Stars data={this.findFlickrData("starry+night") } />} /> 
               <Route component={Error404} />
             </Switch>
 
          {
            (this.state.uploading)
-           ? <p>★Uploading Galaxy Gallery★</p>
+           ? <p>★Uploading Galaxy★</p>
            : <PhotoContainer data={this.state.photographs} />
          }          
         </div>

@@ -6,7 +6,7 @@ Loading message, updated Nav CSS, no search results, and 404Error Route Componen
 
 axios get request includes a safe search and results are set to 24 max.
 
-API Key not included, update App.js line 36 ${Config} to access with API Key.
+API Key not included, update apiKey inside of Config.js to access with Flickr API Key.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

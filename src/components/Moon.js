@@ -2,7 +2,7 @@ import React from "react";
 
 const Moon = (props) => (
     <>
-        <h2>{props.title}</h2>
+        <h2>"The Moon is Haunted..."</h2>
                {props.img}
     </>
 );
