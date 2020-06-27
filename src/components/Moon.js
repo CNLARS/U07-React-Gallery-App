@@ -35,7 +35,7 @@ findFlickrData = (query) => {
   render(){
     return (
         <div>
-        <h2>"On behalf of the moon..."</h2>    
+        <h2>"In the name of the moon..."</h2>    
          {
            (this.state.uploading)
            ? <p>★Uploading Galaxy★</p>
