@@ -31,7 +31,17 @@ export default class App extends Component{
 componentDidMount(){
   this.findFlickrData("nebulas"); //Initial image display
   // this.findFlickrData();
+  
 }
+
+componentDidUpdate(prevProps) {
+  console.log("componentDidUpdate");
+}
+
+// sunshine(){
+//   this.setState( { photographs: this.findFlickrData("Sun+rise+set") } );
+// }
+
 
 findFlickrData = (query) => {
   axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${Config}&tags=${query}&safe_search=&per_page=24&format=json&nojsoncallback=1`)
@@ -41,7 +51,7 @@ findFlickrData = (query) => {
         uploading: false
       })
       //console.log(response.data.photos.photo[0]); //Testing123
-      console.log("Fetching"); //Testing123
+      console.log("Testing123"); //Testing123
     })
     .catch(error => {
       console.log(error);
@@ -61,14 +71,27 @@ findFlickrData = (query) => {
         </div>
         
         <div className="main-content">
+
             <Switch>
               <Route exact path="/" />
-              <Route exact path="/sun" render={ () => <Sun data={this.findFlickrData("Sun+rise+set")  } />} /> 
-              <Route exact path="/moon" render={ () => <Moon data={this.findFlickrData("Moon+eclipse") } />} /> 
-              <Route exact path="/stars" render={ () => <Stars data={this.findFlickrData("starry+night") } />} /> 
+              <Route path="/sun" component={Sun} /> 
+                {/* data={this.findFlickrData("Sun+rise+set") } */}
+              <Route path="/moon" component={Moon} />
+                {/* data={this.findFlickrData("Moon+eclipse") } */}
+              <Route path="/stars" component={Stars} />
+                {/* data={this.findFlickrData("starry+night") } */}
               <Route component={Error404} />
             </Switch>
 
+
+              {/* 
+
+              <Route exact path="/sun" render={ () => <Sun data={this.findFlickrData("Sun+rise+set")  } />} /> 
+              <Route exact path="/moon" render={ () => <Moon data={this.findFlickrData("Moon+eclipse") } />} /> 
+              <Route exact path="/stars" render={ () => <Stars data={this.findFlickrData("starry+night") } />} />  
+              
+              */}
+         
          {
            (this.state.uploading)
            ? <p>★Uploading Galaxy★</p>
