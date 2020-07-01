@@ -5,7 +5,7 @@ import axios from "axios";
 
 import PhotoContainer from './PhotoContainer';
 
-export default class Stars extends Component{
+export default class Moon extends Component{
   constructor(){
     super();
     this.state = {
