@@ -31,7 +31,6 @@ export default class App extends Component{
 componentDidMount(){
   this.findFlickrData("nebulas"); //Initial image display
   // this.findFlickrData();
-  
 }
 
 componentDidUpdate(prevProps) {
@@ -55,7 +54,7 @@ findFlickrData = (query) => {
 }
 
   render(){
-
+    // let inquiry = this.props.match.params.query;
     return (
       <BrowserRouter>
         <div className="container">
@@ -70,23 +69,15 @@ findFlickrData = (query) => {
 
             <Switch>
               <Route exact path="/" />
-              <Route path="/sun" component={Sun} /> 
+              <Route exact path="/sun" component={Sun} /> 
                 {/* data={this.findFlickrData("Sun+rise+set") } */}
-              <Route path="/moon" component={Moon} />
+              <Route exact path="/moon" component={Moon} />
                 {/* data={this.findFlickrData("Moon+eclipse") } */}
-              <Route path="/stars" component={Stars} />
+              <Route exact path="/stars" component={Stars} />
                 {/* data={this.findFlickrData("starry+night") } */}
+              <Route path="/search-results/:inquiry" render= { () => <PhotoContainer data={this.state.photographs} /> } />
               <Route component={Error404} />
             </Switch>
-
-
-              {/* 
-
-              <Route exact path="/sun" render={ () => <Sun data={this.findFlickrData("Sun+rise+set")  } />} /> 
-              <Route exact path="/moon" render={ () => <Moon data={this.findFlickrData("Moon+eclipse") } />} /> 
-              <Route exact path="/stars" render={ () => <Stars data={this.findFlickrData("starry+night") } />} />  
-              
-              */}
          
          {
            (this.state.uploading)

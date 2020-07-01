@@ -13,9 +13,13 @@ export default class SearchForm extends Component {
     searchIMG = e => {
         e.preventDefault();
         this.props.onSearch(this.query.value);
+            let inquiry = this.query.value;
+            let path = `search-results/${inquiry}`;
+        this.props.history.push(path);
         e.currentTarget.reset();
+            console.log(path); //Testing123
     }
-
+    
     render(){
         return (
         <form className="search-form" onSubmit={this.searchIMG}>
