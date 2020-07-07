@@ -5,6 +5,7 @@ import "./css/index.css";
 //Data & Key to Access Flickr
 import Config from "./components/Config";
 import axios from "axios";
+import {withRouter} from "react-router"; //?
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -54,7 +55,7 @@ findFlickrData = (query) => {
 }
 
   render(){
-    // let inquiry = this.props.match.params.query;
+    // let inquiry = this.props.history;
     return (
       <BrowserRouter>
         <div className="container">
@@ -75,7 +76,7 @@ findFlickrData = (query) => {
                 {/* data={this.findFlickrData("Moon+eclipse") } */}
               <Route exact path="/stars" component={Stars} />
                 {/* data={this.findFlickrData("starry+night") } */}
-              <Route path="/search-results/:inquiry" render= { () => <PhotoContainer data={this.state.photographs} /> } />
+              <Route path="/search" render={ () => <SearchForm onSearch={this.findFlickrData} /> } />
               <Route component={Error404} />
             </Switch>
          

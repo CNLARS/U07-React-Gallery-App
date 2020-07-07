@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 
 export default class SearchForm extends Component {
 
@@ -15,14 +16,16 @@ export default class SearchForm extends Component {
         this.props.onSearch(this.query.value);
             let inquiry = this.query.value;
             let path = `search-results/${inquiry}`;
-        this.props.history.push(path);
+        // this.props.history.push(path);
         e.currentTarget.reset();
             console.log(path); //Testing123
     }
     
     render(){
+            const { match, location, history } = this.props;
+            console.log(this.props); //Testing123
         return (
-        <form className="search-form" onSubmit={this.searchIMG}>
+        <form className="search-form" onSubmit={this.searchIMG} >
             <input 
                 type="search" 
                 onChange={this.searchReq}
